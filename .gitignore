@@ -52,3 +52,33 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+## Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## Docker
+**/docker-compose.override.yml
+**/*.dbmdl
+**/Dockerfile.develop
+
+## Environment & secrets
+**/appsettings.Development.json
+**/appsettings.Local.json
+**/appsettings.*.local.json
+**/secrets.json
+**/usersecrets/
+
+## OS / tooling
+.DS_Store
+Thumbs.db
