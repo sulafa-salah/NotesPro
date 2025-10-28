@@ -1,6 +1,53 @@
-@NotesPro.Api_HostAddress = http://localhost:5118
+@baseUrl = http://localhost:5000/api/notes
+@id= 6900d2b4026fce0ed2d36d8e
+### Create Note
+# @name createNote
+POST {{baseUrl}}
+Content-Type: application/json
 
-GET {{NotesPro.Api_HostAddress}}/weatherforecast/
+{
+  "title": "My First Note",
+  "content": "This is the first note created from HTTP file.",
+  "tags": ["mongodb", "dotnet"]
+}
+
+
+
+### Get Note by Id
+GET {{baseUrl}}/{{id}}
 Accept: application/json
 
 ###
+
+### Search Notes
+GET {{baseUrl}}?q=first&tags=mongodb&tags=dotnet&page=1&pageSize=10
+Accept: application/json
+
+###
+
+### Update Note
+PUT {{baseUrl}}/{{id}}
+Content-Type: application/json
+
+{
+  "title": "My First Note (Updated)",
+  "content": "This note has been updated using HTTP file.",
+  "tags": ["updated", "mongodb"],
+  "expectedVersion": 0
+}
+
+###
+
+### Soft Delete Note
+DELETE {{baseUrl}}/{{id}}?purgeDays=7
+
+###
+
+### Restore Note
+POST {{baseUrl}}/{{id}}/restore
+
+###
+
+### Get Deleted Notes
+GET {{baseUrl}}/deleted?page=1&pageSize=10
+Accept: application/json

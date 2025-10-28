@@ -1,7 +1,16 @@
+using NotesPro.Api.Infrastructure.Mappings;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
+//Register all Mongo mappings 
+builder.AddMongoInfrastructure();
+
+
+
+// ensures collection + indexes
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

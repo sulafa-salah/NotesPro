@@ -82,3 +82,4 @@ nunit-*.xml
 ## OS / tooling
 .DS_Store
 Thumbs.db
+/src/NotesPro.Api/createNotesPro.http
